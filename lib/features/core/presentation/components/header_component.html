@@ -1,0 +1,36 @@
+<header class="header">
+    <div class="container">
+        <div class="burger-wrap">
+            <div class="burger">
+                <div class="line"></div>
+            </div>
+        </div>
+        <a class="logos" href="/"><img src="assets/static/images/content/logo.svg" alt="" /></a>
+        <info_bloc_component style="width: 100%"></info_bloc_component>
+        <div class="logos auth-block">
+            <div class="button-auth">
+                <user_bloc_component [type]="UserBlocWidgetType.button"></user_bloc_component>
+            </div>
+        </div>
+        <div class="cart">
+            <img src="assets/static/images/content/cart.svg" alt="">
+            <div class="priceblock">
+                <div class="price">
+                    <cart_bloc_component [type]="1"></cart_bloc_component>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="menu-mobile">
+        <ul>
+            <li><a class="active" href="">Доставка</a></li>
+            <li><a href="">Вакансии</a></li>
+            <li><a href="">Франшиза</a></li>
+            <li><a href="">Контакты</a></li>
+        </ul>
+    </div>
+</header>
+
+
+<cart_bloc_component [type]="2"></cart_bloc_component>

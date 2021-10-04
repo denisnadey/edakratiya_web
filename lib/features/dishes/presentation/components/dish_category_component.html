@@ -1,0 +1,10 @@
+<section class="setpath ">
+    <div class="path">
+        <h2>{{category.name}}</h2>
+        <div class="food">
+            <template ngFor let-group [ngForOf]="subGroupes">
+                <dish_card [group]="group" class="fblock"></dish_card>
+            </template>
+        </div>
+    </div>
+</section>

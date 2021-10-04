@@ -1,0 +1,51 @@
+<div *ngIf="state != null" class="tag-menu" id="tag-menu">
+  <template [ngIf]="isEmpty" class="tc">
+    <material-icon icon="info" class="light-blue"></material-icon>
+    <p>Please enter a term to begin</p>
+  </template>
+  <template [ngIf]="isLoading" class="tc">
+    <p>Загрузка меню....</p>
+  </template>
+  <template [ngIf]="isError" class="tc">
+    <material-icon icon="error" class="light-red"></material-icon>
+    <p>{{error}}</p>
+  </template>
+  <template [ngIf]="isSuccess">
+    <template [ngIf]="groupes.length == 0" class="tc">
+      <material-icon icon="warning" class="light-yellow"></material-icon>
+      <p>Пусто блять</p>
+    </template>
+    <template [ngIf]="isLoading" class="tc">
+      <material-spinner></material-spinner>
+    </template>
+    <template [ngIf]="isError" class="tc">
+      <material-icon icon="error" class="light-red"></material-icon>
+      <p></p>
+    </template>
+    <template [ngIf]="isSuccess">
+      <template [ngIf]="groupes.length == 0" class="tc">
+        <material-icon icon="warning" class="light-yellow"></material-icon>
+        <p>Пусто блять</p>
+      </template>
+
+      <div class="container for-achor-row">
+        <div class="menu-anchor-row" id="menu-anchor-row">
+          <template
+            ngFor
+            let-category
+            [ngForOf]="categories"
+            let-first="first"
+            let-i="index"
+          >
+            <a
+              [class.active-tag]="first"
+              href="#category_{{i}}"
+              class="item-row"
+              >{{category.name}}</a
+            >
+          </template>
+        </div>
+      </div>
+    </template>
+  </template>
+</div>

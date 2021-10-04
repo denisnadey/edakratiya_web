@@ -1,0 +1,21 @@
+<div class="calc-line">
+    <div class="line">
+        <div class="info">
+            <div class="title">{{title}}</div>
+            <div class="about-mini">{{measureString}}</div>
+        </div>
+        <div class="setting">
+            <div class="minus" (click)="minus()">
+                <img src="assets/static/images/content/min.svg" alt="">
+            </div>
+            <div class="qulvo">{{count}}</div>
+            <div class="plus" (click)="plus()">
+                <img src="assets/static/images/content/plus.svg" alt="">
+            </div>
+        </div>
+    </div>
+
+    <div class="priceview">
+        <span class="price">{{count}} * {{price}} = {{fullPrice}} ₽</span>
+    </div>
+</div>

@@ -1,0 +1,8 @@
+<div class="switch-field">
+  <label
+    *ngFor="let addition of additions"
+    (click)="select(addition)"
+    selected="isSelected(addition)"
+    >{{addition}}</label
+  >
+</div>

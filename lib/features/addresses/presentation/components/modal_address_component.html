@@ -1,0 +1,13 @@
+<div class="modal-pane">
+  <div class="textpath">
+    <h2>Адрес</h2>
+    <address_list_bloc_component
+      *ngIf="isListOpened"
+    ></address_list_bloc_component>
+    <address_edit_bloc_component
+      *ngIf="isEditOpened"
+    ></address_edit_bloc_component>
+    <material-button class="close" autoFocus clear-size (trigger)="close()">
+    </material-button>
+  </div>
+</div>

@@ -1,0 +1,30 @@
+<div class="modal-pane">
+    <div class="imagepath">
+        <img src="{{imageLink}}" alt="{{title}}" />
+    </div>
+    <div class="textpath">
+        <h2>{{title}} </h2>
+        <span class="measure">{{measure}}</span>
+        <p>{{description}} {{productsString}}</p>
+        <size_config_component *ngIf="hasSizes" [sizes]="sizes" [cartDish]="cartDish"></size_config_component>
+        <required_additions_component *ngIf="hasRequiredAdditions" [additions]="requiredAdditions" [cartDish]="cartDish"></required_additions_component>
+        <div class="choose">
+            <div class="info">
+                <div class="title">Количество</div>
+            </div>
+            <div class="setting">
+                <div class="minus" (click)="minusCount()">
+                    <img src="assets/static/images/content/min.svg" alt="minus">
+                </div>
+                <div class="qulvo">{{count}}</div>
+                <div class="plus" (click)="addCount()">
+                    <img src="assets/static/images/content/plus.svg" alt="plus">
+                </div>
+            </div>
+        </div>
+        <div class="clear-btn full-btn" (click)="addToCart()">В корзину за {{price}} ₽</div>
+        <material-button class="close" autoFocus clear-size (trigger)="close()">
+            <div class="close-text">Вернуться к меню</div>
+        </material-button>
+    </div>
+</div>

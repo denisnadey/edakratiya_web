@@ -1,0 +1,7 @@
+<order_creation_component
+  *ngIf="isLoaded"
+  [order]="order"
+></order_creation_component>
+<div *ngIf="isLoading">ЗАГРУЗКА</div>
+<div *ngIf="isFailure">{{failure}}</div>
+<div *ngIf="isCompleted">ЗАКАЗ ВЫПОЛНЕН</div>

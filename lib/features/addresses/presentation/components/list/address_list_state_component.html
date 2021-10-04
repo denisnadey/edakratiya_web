@@ -1,0 +1,8 @@
+<div *ngIf="isLoaded">
+  <div *ngFor="let address of addressList" (click)="addressClick(address)">
+    {{address.toString()}}
+  </div>
+  <button (click)="addAddress()">Добавить адрес</button>
+</div>
+<div *ngIf="isLoading || isInitial">Loading</div>
+<div *ngIf="isFailure">{{failure}}</div>

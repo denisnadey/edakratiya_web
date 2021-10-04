@@ -1,0 +1,35 @@
+name: edakratiya_web
+description: A web app that uses AngularDart
+version: 0.0.1
+
+environment:
+  sdk: ">=2.9.0 <3.0.0"
+
+dependencies:
+  angular: ^6.0.0-alpha+1
+  lint: ^1.2.0
+
+  edakratiya_core:
+    git:
+      url: git@github.com:kidok313/edakratiya_core.git
+      ref: beta
+  angular_bloc: ^6.0.0-dev.8
+
+  angular_components: ^0.14.0-alpha+1
+  angular_router: 2.0.0-alpha+24
+  get_it: ^4.0.4
+  firebase: ^7.3.0
+  js: ^0.6.2
+  hive: ^1.4.4
+  client_cookie: ^2.2.1
+  intl: ^0.16.1
+
+dependency_overrides:
+  intl: 0.16.1
+dev_dependencies:
+  pedantic: ^1.9.2
+  angular_test: ^2.3.1
+  build_runner: ^1.0.0
+  build_test: ^1.0.0
+  build_web_compilers: ^2.0.0
+  test: ^1.6.4

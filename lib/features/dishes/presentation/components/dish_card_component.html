@@ -1,0 +1,17 @@
+<img src="{{image}}" alt="{{group.title}}" loading="lazy" (click)="openModal()" />
+
+
+<div class="info" (click)="openModal()">
+    <div class="title">{{group.title}}</div>
+    <div class="about">{{description}}</div>
+    <div class="foot">
+        <div class="paramblock">
+            <span>{{sizes}}</span>
+        </div>
+        <div class="priceblock">
+            <span *ngIf="isNotSinglePrice">От</span>
+            <p class="price">{{price}} ₽</p>
+
+        </div>
+    </div>
+</div>

@@ -1,0 +1,2 @@
+<user_profile_button_component *ngIf="isLogined && isButton" [user]="user"></user_profile_button_component>
+<img *ngIf="isNotLogined && isButton" (click)="authClick()" src="assets/static/images/content/login.svg" alt="" />

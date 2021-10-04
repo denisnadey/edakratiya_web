@@ -1,0 +1,3 @@
+<cart_state_component *ngIf="isFullCart" style="width: 100%;" [state]="cartBloc | bloc"></cart_state_component>
+<cart_button_state_component *ngIf="isButton" style="width: 100%;" [state]="cartBloc | bloc"></cart_button_state_component>
+<cart_counter_state_component *ngIf="isCounter" style="width: 100%;" [state]="cartBloc | bloc"></cart_counter_state_component>

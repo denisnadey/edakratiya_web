@@ -1,0 +1,22 @@
+<div *ngIf="state != null">
+    <div *ngIf="isInitial || isPhoneError || isCodeError">
+
+        <div class="number-line">
+            <input type="tel" name="Номер телефона" id="phone" placeholder="+7(000)000-00-00" class="phone_number" #phoneNumber />
+            <label for="loginnumber">Номер телефона</label>
+        </div>
+
+
+        <button class="clear-btn full-btn" name="loginnumber" (click)="request(phoneNumber.value)">Выслать код</button>
+
+
+
+    </div>
+    <div *ngIf="isPhoneError">{{phoneError}}</div>
+    <div *ngIf="isCodeError">{{codeError}}</div>
+    <div *ngIf="isWaitingForCode">
+        <input #newCode />
+        <button class="clear-btn full-btn" (click)="sendCode(newCode.value)">Подвердить код</button>
+    </div>
+</div>
+<div id="recaptcha-container"></div>

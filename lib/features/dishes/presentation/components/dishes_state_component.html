@@ -1,0 +1,81 @@
+<template [ngIf]="state != null" class="mw10">
+	<template [ngIf]="isEmpty" class="tc">
+		<material-icon icon="info" class="light-blue"></material-icon>
+		<p>Please enter a term to begin</p>
+	</template>
+<template [ngIf]="isLoading" class="tc">
+		<div class="setpath">
+			<div class="path">
+				<h2 class="card-title skeleton"></h2>
+				<div class="food">
+					<div class="skeleton-card">
+						<div class="card-img skeleton">
+							<!-- waiting for img to load from javascript -->
+						</div>
+						<div class="card-body">
+							<h2 class="card-title skeleton">
+								<!-- wating for title to load from javascript -->
+							</h2>
+							<p class="card-intro skeleton">
+								<!-- waiting for intro to load from Javascript -->
+							</p>
+						</div>
+					</div>
+					<div class="skeleton-card">
+						<div class="card-img skeleton">
+							<!-- waiting for img to load from javascript -->
+						</div>
+						<div class="card-body">
+							<h2 class="card-title skeleton">
+								<!-- wating for title to load from javascript -->
+							</h2>
+							<p class="card-intro skeleton">
+								<!-- waiting for intro to load from Javascript -->
+							</p>
+						</div>
+					</div>
+					<div class="skeleton-card">
+						<div class="card-img skeleton">
+							<!-- waiting for img to load from javascript -->
+						</div>
+						<div class="card-body">
+							<h2 class="card-title skeleton">
+								<!-- wating for title to load from javascript -->
+							</h2>
+							<p class="card-intro skeleton">
+								<!-- waiting for intro to load from Javascript -->
+							</p>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</template>
+<template [ngIf]="isError" class="tc">
+		<material-icon icon="error" class="light-red"></material-icon>
+		<p></p>
+	</template>
+<template [ngIf]="isSuccess">
+		<template [ngIf]="groupes.length == 0" class="tc">
+			<material-icon icon="warning" class="light-yellow"></material-icon>
+			<p>Пусто блять</p>
+		</template>
+<template [ngIf]="isLoading" class="tc">
+			<material-spinner></material-spinner>
+		</template>
+<template [ngIf]="isError" class="tc">
+			<material-icon icon="error" class="light-red"></material-icon>
+			<p></p>
+		</template>
+<template [ngIf]="isSuccess">
+			<template [ngIf]="groupes.length == 0" class="tc">
+				<material-icon icon="warning" class="light-yellow"></material-icon>
+				<p>Пусто блять</p>
+			</template>
+<template ngFor let-category [ngForOf]="categories" let-i="index">
+				<dish_category id="category_{{i}}" class="scrollspy" [category]="category" [groupes]="groupes"></dish_category>
+				
+			</template>
+</template>
+</template>
+</template>

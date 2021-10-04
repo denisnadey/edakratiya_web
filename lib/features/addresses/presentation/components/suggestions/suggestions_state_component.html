@@ -1,0 +1,10 @@
+<div>{{state}}</div>
+<div>{{vals.length}}</div>
+<div>{{vals}}</div>
+<material-auto-suggest-input
+  [selectionOptions]="values"
+  (inputTextChange)="inputChanged($event)"
+  [showPopup]="visible"
+  [loading]="true"
+>
+</material-auto-suggest-input>

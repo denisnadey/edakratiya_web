@@ -1,0 +1,54 @@
+<div class="container foodspec" id="order">
+  <div class="foodlist">
+    <div class="order">
+      <button (click)="goBack()">НАЗАД</button>
+      <p>Адрес (при нажатии открывает модалку создания адреса)</p>
+      <input (click)="addressClick()" value="{{address}}" readonly="true" />
+      <p>Комментарий к заказу</p>
+      <input #comment />
+      <p>
+        Оплата (нужен флаг для отображения какая выбрана(пока использовал
+        disabled))
+      </p>
+      <button disabled="isCard">Картой курьеру</button>
+      <button disabled="isCash">Наличными</button>
+    </div>
+
+    <div class="sidebar-cart" style="margin-top: 0px">
+      <div id="cartx">
+        <div class="startline">
+          <div class="title">Мой заказ</div>
+          <svg
+            width="16"
+            height="18"
+            viewbox="0 0 16 18"
+            fill="none"
+            xmlns="http://www.w3.org/2000/svg"
+            (click)="clear()"
+          >
+            <path
+              d="M5 0V1H0V3H1V16C1 17.1 1.9 18 3 18H13C14.1 18 15 17.1 15 16V3H16V1H11V0H5ZM3 3H13V16H3V3ZM5 5V14H7V5H5ZM9 5V14H11V5H9Z"
+              fill="#FF5C00"
+            ></path>
+          </svg>
+        </div>
+        <div *ngIf="isEmpty">
+          <div class="empty-text">
+            <h2>😰Пустовато!</h2>
+          </div>
+        </div>
+        <div class="rowes">
+          <div *ngFor="let entry of entries">
+            <cart_dish_component [dish]="entry"></cart_dish_component>
+          </div>
+        </div>
+
+        <div class="clear-btn full-btn">Подтвердить заказ {{sum}} ₽</div>
+      </div>
+    </div>
+  </div>
+  <modal [visible]="isAddressesOpened">
+    <modal_address_bloc_component (closeClicked)="closeClicked">
+    </modal_address_bloc_component>
+  </modal>
+</div>
